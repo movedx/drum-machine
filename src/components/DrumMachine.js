@@ -29,20 +29,28 @@ const DrumMachine = () => {
         </div>
         <div id="main" className="flex justify-around">
           <div id="pads" className="grid grid-cols-3 gap-8 mb-8">
-            {Array(9)
-              .fill(9)
-              .map((el) => {
-                return <Pad key={uuid()} />;
-              })}
+            <Pad id="pq" key={uuid()} />
+            <Pad id="pw" key={uuid()} />
+            <Pad id="pe" key={uuid()} />
+            <Pad id="pa" key={uuid()} />
+            <Pad id="ps" key={uuid()} />
+            <Pad id="pd" key={uuid()} />
+            <Pad id="pz" key={uuid()} />
+            <Pad id="px" key={uuid()} />
+            <Pad id="pc" key={uuid()} />
           </div>
           <div id="controls" className="">
             <Display />
             <div id="knobs" className="grid grid-cols-3 gap-4 mb-6">
-              {Array(9)
-                .fill(9)
-                .map((el) => {
-                  return <Knob key={uuid()} />;
-                })}
+              <Knob id="kq" key={uuid()} />
+              <Knob id="kw" key={uuid()} />
+              <Knob id="ke" key={uuid()} />
+              <Knob id="ka" key={uuid()} />
+              <Knob id="ks" key={uuid()} />
+              <Knob id="kd" key={uuid()} />
+              <Knob id="kz" key={uuid()} />
+              <Knob id="kx" key={uuid()} />
+              <Knob id="kc" key={uuid()} />
             </div>
             <Fader />
           </div>
