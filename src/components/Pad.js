@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import * as Tone from "tone";
 import "../tailwind.output.css";
-import { useSelector } from "react-redux";
-import { selectVolume } from "../redux/features/machineSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { selectVolume, setDisplayText } from "../redux/features/machineSlice";
 
 const Pad = (props) => {
+  const dispatch = useDispatch();
   const volume = useSelector((state) => selectVolume(state, props.id[1]));
   const player = props.sample;
   player.volume.value = volume;
@@ -19,6 +20,8 @@ const Pad = (props) => {
 
   const play = async () => {
     await Tone.loaded();
+    dispatch(setDisplayText(props.id[1]));
+    console.log(player);
     player.start();
   };
 
