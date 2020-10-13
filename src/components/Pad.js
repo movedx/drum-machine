@@ -1,15 +1,13 @@
 import React, { useEffect } from "react";
 import * as Tone from "tone";
 import "../tailwind.output.css";
-import banks from "./banks";
 import { useSelector } from "react-redux";
-import { selectBank, selectVolume } from "../redux/features/machineSlice";
+import { selectVolume } from "../redux/features/machineSlice";
 
 const Pad = (props) => {
-  const volume = useSelector(selectVolume)(props.id[1]);
-  const bank = useSelector(selectBank);
-  const sample = banks[bank][props.id[1]];
-  const player = new Tone.Player(sample).toDestination();
+  const volume = useSelector((state) => selectVolume(state, props.id[1]));
+  const player = props.sample;
+  player.volume.value = volume;
 
   useEffect((props) => {
     window.addEventListener("keydown", handleKeyDown);
@@ -21,11 +19,10 @@ const Pad = (props) => {
 
   const play = async () => {
     await Tone.loaded();
-    player.volume.value = volume;
-    console.log(player.volume.value);
     player.start();
   };
-  const handleKeyDown = async (event) => {
+
+  const handleKeyDown = (event) => {
     if (event.key === props.id[1]) {
       play();
     }

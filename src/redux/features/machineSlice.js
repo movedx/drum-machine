@@ -31,9 +31,7 @@ export const machineSlice = createSlice({
 
 export const { setVolume } = machineSlice.actions;
 
-export const selectVolume = (state) => (id) =>
+export const selectVolume = (state, id) =>
   (1 - state.machine["volume" + id.toUpperCase()] / 100) * 80 * -1;
-
-export const selectBank = (state) => state.machine.bank;
 
 export default machineSlice.reducer;

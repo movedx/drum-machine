@@ -6,8 +6,19 @@ import Fader from "./Fader";
 import Pad from "./Pad";
 import ButtonRound from "./ButtonRound";
 import { v4 as uuid } from "uuid";
+import * as Tone from "tone";
+import banks from "../banks";
 
 const DrumMachine = () => {
+  const sampleZ = new Tone.Player(banks.b1.z).toDestination();
+  const sampleX = new Tone.Player(banks.b1.x).toDestination();
+  const sampleC = new Tone.Player(banks.b1.c).toDestination();
+  const sampleA = new Tone.Player(banks.b1.a).toDestination();
+  const sampleS = new Tone.Player(banks.b1.s).toDestination();
+  const sampleD = new Tone.Player(banks.b1.d).toDestination();
+  const sampleQ = new Tone.Player(banks.b1.q).toDestination();
+  const sampleW = new Tone.Player(banks.b1.w).toDestination();
+  const sampleE = new Tone.Player(banks.b1.e).toDestination();
   return (
     <div
       id="container"
@@ -29,15 +40,15 @@ const DrumMachine = () => {
         </div>
         <div id="main" className="flex justify-around">
           <div id="pads" className="grid grid-cols-3 gap-8 mb-8">
-            <Pad id="pq" key={uuid()} />
-            <Pad id="pw" key={uuid()} />
-            <Pad id="pe" key={uuid()} />
-            <Pad id="pa" key={uuid()} />
-            <Pad id="ps" key={uuid()} />
-            <Pad id="pd" key={uuid()} />
-            <Pad id="pz" key={uuid()} />
-            <Pad id="px" key={uuid()} />
-            <Pad id="pc" key={uuid()} />
+            <Pad id="pq" sample={sampleQ} key={uuid()} />
+            <Pad id="pw" sample={sampleW} key={uuid()} />
+            <Pad id="pe" sample={sampleE} key={uuid()} />
+            <Pad id="pa" sample={sampleA} key={uuid()} />
+            <Pad id="ps" sample={sampleS} key={uuid()} />
+            <Pad id="pd" sample={sampleD} key={uuid()} />
+            <Pad id="pz" sample={sampleZ} key={uuid()} />
+            <Pad id="px" sample={sampleX} key={uuid()} />
+            <Pad id="pc" sample={sampleC} key={uuid()} />
           </div>
           <div id="controls" className="">
             <Display />
