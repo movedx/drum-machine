@@ -37,7 +37,10 @@ export const machineSlice = createSlice({
 export const { setVolume, setDisplayText } = machineSlice.actions;
 
 export const selectVolume = (state, id) =>
-  (1 - state.machine["volume" + id.toUpperCase()] / 100) * 80 * -1;
+  (1 - state.machine["volume" + id.toUpperCase()] / 100) *
+  80 *
+  -1 *
+  (1 - state.machine.volume / 100);
 
 export const selectDisplayText = (state) => state.machine.displayText;
 

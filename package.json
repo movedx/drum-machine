@@ -13,6 +13,7 @@
     "marked": "^1.1.1",
     "npm-run-all": "^4.1.5",
     "react": "^16.13.1",
+    "react-compound-slider": "^2.5.0",
     "react-dial-knob": "^1.1.5",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
