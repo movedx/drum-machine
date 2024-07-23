@@ -1,3 +1,20 @@
+# Drum Machine
+This repository contains a Drum Machine built with React and Redux. The Drum Machine is an interactive application that allows users to play drum sounds using keyboard keys or clickable buttons. It also includes additional features like volume control and sound bank switching.
+
+Features
+- Interactive Drum Pads: Play drum sounds using the Q, W, E, A, S, D, Z, X, C keys or by clicking on the corresponding buttons.
+- Volume Control: Adjust the volume of the drum sounds using a slider.
+- Display: Shows the current sound being played.
+Technologies Used
+- React: For building the user interface.
+- Redux: For state management.
+- CSS: For styling the components.
+
+[Try it](https://movedx.github.io/drum-machine/)
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
