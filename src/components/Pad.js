@@ -32,8 +32,11 @@ const Pad = (props) => {
   };
 
   return (
-    <button onClick={play} className="border border-solid border-1 w-16 h-16">
-      {props.id[1]}
+    <button
+      onClick={play}
+      className="bg-gray-700 hover:bg-gray-600 active:bg-gray-500 text-white font-bold py-4 px-4 rounded-lg shadow-md transition duration-150 ease-in-out w-24 h-24 flex items-center justify-center text-2xl"
+    >
+      {props.id[1].toUpperCase()}
     </button>
   );
 };

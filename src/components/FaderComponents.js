@@ -11,7 +11,6 @@ const railOuterStyle = {
   transform: "translate(0%, -50%)",
   borderRadius: 7,
   cursor: "pointer",
-  // border: '1px solid white',
 };
 
 const railInnerStyle = {
@@ -21,7 +20,7 @@ const railInnerStyle = {
   transform: "translate(0%, -50%)",
   borderRadius: 7,
   pointerEvents: "none",
-  backgroundColor: "rgb(155,155,155)",
+  backgroundColor: "#374151", /* Darker gray for the rail */
 };
 
 export function SliderRail({ getRailProps }) {
@@ -58,7 +57,6 @@ export function Handle({
           width: 28,
           height: 42,
           cursor: "pointer",
-          // border: '1px solid white',
           backgroundColor: "none",
         }}
         {...getHandleProps(id)}
@@ -76,8 +74,9 @@ export function Handle({
           width: 24,
           height: 24,
           borderRadius: "50%",
-          boxShadow: "1px 1px 1px 1px rgba(0, 0, 0, 0.3)",
-          backgroundColor: disabled ? "#666" : "#ffc400",
+          boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.4)", /* More subtle shadow */
+          backgroundColor: disabled ? "#4B5563" : "#10B981", /* Green for active, darker gray for disabled */
+          border: "2px solid #10B981", /* Green border */
         }}
       />
     </Fragment>
@@ -157,7 +156,7 @@ export function Track({ source, target, getTrackProps, disabled }) {
         transform: "translate(0%, -50%)",
         height: 14,
         zIndex: 1,
-        backgroundColor: disabled ? "#999" : "#b28900",
+        backgroundColor: disabled ? "#4B5563" : "#10B981", /* Green for active, darker gray for disabled */
         borderRadius: 7,
         cursor: "pointer",
         left: `${source.percent}%`,

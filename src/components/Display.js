@@ -6,7 +6,7 @@ import { selectDisplayText } from "../redux/features/machineSlice";
 const Display = () => {
   const text = useSelector(selectDisplayText);
   return (
-    <div className="border border-solid w-7/8 h-8 mb-8 align-middle text-center">
+    <div className="bg-gray-900 text-green-400 text-center py-2 mb-8 rounded-md font-mono text-xl">
       {text}
     </div>
   );

@@ -26,7 +26,7 @@ const DrumMachine = () => {
     >
       <div
         id="drum-machine"
-        className="bg-gray-100 flex flex-col w-full max-w-xl"
+        className="bg-gray-800 p-8 rounded-lg shadow-lg flex flex-col w-full max-w-xl"
       >
         <div id="top" className="flex justify-between px-12 my-8">
           <div id="banks" className="flex justify-evenly w-1/2">
@@ -50,7 +50,7 @@ const DrumMachine = () => {
             <Pad id="px" sample={sampleX} key={uuid()} />
             <Pad id="pc" sample={sampleC} key={uuid()} />
           </div>
-          <div id="controls" className="">
+          <div id="controls" className="ml-8">
             <Display />
             <div id="knobs" className="grid grid-cols-3 gap-4 mb-6">
               <Knob id="kq" key={uuid()} />

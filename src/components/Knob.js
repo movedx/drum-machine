@@ -13,15 +13,22 @@ const Knob = (props) => {
   };
 
   return (
-    <div className="border border-solid border-1 rounded-full w-8 h-8">
+    <div className="w-16 h-16 flex items-center justify-center">
       <Donut
-        diameter={32}
+        diameter={64}
         min={0}
         max={100}
         step={1}
         value={value}
         theme={{
-          donutColor: "gray",
+          donutColor: "rgba(16, 185, 129, 0.5)",
+          centerColor: "#374151",
+          strokeWidth: 10,
+          donutWidth: 0.2,
+          bgrColor: "#4B5563",
+          maxedBgrColor: "#EF4444",
+          centerFocusedColor: "#6EE7B7",
+          textColor: "#FFFFFF",
         }}
         onValueChange={(val) => handleChange(val)}
         ariaLabelledBy={"my-label"}

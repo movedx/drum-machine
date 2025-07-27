@@ -3,7 +3,7 @@ import "../tailwind.output.css";
 
 const ButtonRound = () => {
   return (
-    <div className="border border-solid border-1 rounded-full w-2 h-2"></div>
+    <div className="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 rounded-full w-8 h-8 flex items-center justify-center shadow-md transition duration-150 ease-in-out"></div>
   );
 };
 
